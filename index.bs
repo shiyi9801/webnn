@@ -8108,7 +8108,7 @@ partial dictionary MLOpSupportLimits {
     1. If [=this=] [=MLGraphBuilder/can not build=], then [=exception/throw=] an "{{InvalidStateError}}" {{DOMException}}.
     1. If [=MLGraphBuilder/validating operand=] with [=this=] and |input| returns false, then [=exception/throw=] a {{TypeError}}.
     1. If |beginningPadding|'s [=list/size=] and |endingPadding|'s [=list/size=] are not both equal to |input|'s [=MLOperand/rank=], then [=exception/throw=] a {{TypeError}}.
-    1. Let |outputShape| be a copy of |input|'s [=MLOperand/shape=].
+    1. Let |outputShape| be a [=list/clone=] of |input|'s [=MLOperand/shape=].
     1. [=list/For each=] |index| in [=the exclusive range|the range=] 0 to |outputShape|'s [=MLOperand/rank=], exclusive:
         1. Switch on |options|.{{MLPadOptions/mode}}:
             <dl class=switch>
